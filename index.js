@@ -55,7 +55,8 @@ const npmInstallDependencies = () => {
     return new Promise((resolve, reject) => {
         console.log('NPM INSTALL DEPENDENCIES: ...LOADING');
 
-        const dependencies = 'tea-helper tea-bool tea-helper-leap-year tea-kodachi-fn tea-helper-strings tea-zero-layer-2 tea-hoka-fn tea-persona-fn tea-sekiro-shadows tea-rug tea-terbaik tea-decanto tea-crow popologis sinomatatabi rf-notline not-rf-online excavato excaviar pengikut-sesat dn-hokage dn-yuri ibnusibenu ada-popo tea-guilds una-tea tea-bodoh tea-majapahit krandizkeren hasilkan-uang logika-huruf serangan-fajar tea-mengakun tea-yulvan tea-semangat tea-bacotin tea-sudut tea-rondo asbakun'
+        // const dependencies = 'tea-helper tea-bool tea-helper-leap-year tea-kodachi-fn tea-helper-strings tea-zero-layer-2 tea-hoka-fn tea-persona-fn tea-sekiro-shadows tea-rug tea-terbaik tea-decanto tea-crow popologis sinomatatabi rf-notline not-rf-online excavato excaviar pengikut-sesat dn-hokage dn-yuri ibnusibenu ada-popo tea-guilds una-tea tea-bodoh tea-majapahit krandizkeren hasilkan-uang logika-huruf serangan-fajar tea-mengakun tea-yulvan tea-semangat tea-bacotin tea-sudut tea-rondo asbakun'
+        const dependencies = 'tea-helper tea-rug'
         exec(`npm i ${dependencies}`, {  cwd: `./${finalWord}` }, (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
@@ -114,9 +115,8 @@ const mainThread = async () => {
         
         console.log("Congratulation's, your NPM Package has been created successfully!")
 
-        if (i >= 10) iteration = false
-        i++
-
+        console.log("Delay 30 Detik!")
+        await new Promise(resolve => setTimeout(resolve, 30000));
     }
 }
 
