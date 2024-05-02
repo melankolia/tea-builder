@@ -111,8 +111,8 @@ const mainThread = async () => {
         await gitInit()
         await npmInstallDependencies()
         await npmPublish()
-
-        await new Promise(resolve => setTimeout(resolve, 180000));
+        
+        console.log("Congratulation's, your NPM Package has been created successfully!")
 
         if (i >= 10) iteration = false
         i++
