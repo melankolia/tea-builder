@@ -105,7 +105,8 @@ const npmPublish = () => {
 
 const mainThread = async () => {
     let i = 0
-    while (true) {
+    let iteration = true
+    while (iteration) {
         await npmInit()
         await gitInit()
         await npmInstallDependencies()
@@ -113,6 +114,8 @@ const mainThread = async () => {
 
         await new Promise(resolve => setTimeout(resolve, 180000));
         i++
+
+        if (i == 10) iteration = false
     }
 }
 
