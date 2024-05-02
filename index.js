@@ -113,9 +113,10 @@ const mainThread = async () => {
         await npmPublish()
 
         await new Promise(resolve => setTimeout(resolve, 180000));
+
+        if (i >= 10) iteration = false
         i++
 
-        if (i == 10) iteration = false
     }
 }
 
